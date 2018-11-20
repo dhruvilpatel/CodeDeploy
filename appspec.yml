@@ -9,4 +9,3 @@ Resources:
       Description: ''
       MemorySize: 512
       Timeout: 15
-      Role: 'arn:aws:iam::024728231857:role/lambda-sns-role'
