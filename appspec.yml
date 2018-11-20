@@ -1,18 +1,14 @@
-version: 0.0
-os: linux
-files:
-  - source: /index.html
-    destination: /var/www/html/
-hooks:
-  BeforeInstall:
-    - location: scripts/install_dependencies
-      timeout: 300
-      runas: root
-    - location: scripts/start_server
-      timeout: 300
-      runas: root
-  ApplicationStop:
-    - location: scripts/stop_server
-      timeout: 300
-      runas: root
-
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  CodeDeploy:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: com.amazonaws.lambda.demo.Hello
+      Runtime: java8
+      CodeUri: .
+      Description: ''
+      MemorySize: 512
+      Timeout: 15
+      Role: 'arn:aws:iam::024728231857:role/lambda-sns-role'
