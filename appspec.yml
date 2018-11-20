@@ -2,11 +2,9 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: An AWS Serverless Specification template describing your function.
 Resources:
-  CodeDeploy:
+  nodeJSHelloWorld:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: com.amazonaws.lambda.demo.Hello
-      Runtime: java8
       CodeUri: .
       Description: ''
       MemorySize: 512
